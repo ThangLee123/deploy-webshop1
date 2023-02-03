@@ -28,9 +28,13 @@ import {
 } from '../constants/userConstants';
 
 export const fetchUser = async (token) => {
-    const res = await axiosInstance.post('/api/users/infor', {
-        headers: { Authorization: token },
-    });
+    const res = await axiosInstance.post(
+        '/api/users/infor',
+        {},
+        {
+            headers: { Authorization: token },
+        },
+    ); //m
     return res;
 };
 
@@ -56,7 +60,7 @@ export const signin = (email, password) => async (dispatch) => {
 };
 
 export const signout = () => async (dispatch) => {
-    await axiosInstance.post('/api/users/logout');
+    await axiosInstance.post('/api/users/logout', {}); //m
     localStorage.removeItem('firstLogin');
     localStorage.removeItem('cartItems');
     localStorage.removeItem('userInfo');
@@ -73,9 +77,13 @@ export const detailsUser = (userId) => async (dispatch, getState) => {
     dispatch({ type: USER_DETAILS_REQUEST, payload: userId });
     try {
         const { token } = getState();
-        const { data } = await axiosInstance.post(`/api/users/${userId}`, {
-            headers: { Authorization: token },
-        });
+        const { data } = await axiosInstance.post(
+            `/api/users/${userId}`,
+            {},
+            {
+                headers: { Authorization: token },
+            },
+        ); //m
         dispatch({ type: USER_DETAILS_SUCCESS, payload: data });
     } catch (error) {
         dispatch({
@@ -111,10 +119,11 @@ export const listUsers =
             const { token } = getState();
             const { data } = await axiosInstance.post(
                 `/api/users?searchValue=${searchValue}&pageNumber=${currentPage}&itemsPerPage=${itemsPerPage}`,
+                {},
                 {
                     headers: { Authorization: token },
                 },
-            );
+            ); //m
             dispatch({ type: USER_LIST_SUCCESS, payload: data });
         } catch (error) {
             // console.log(error); //(axiosInstance error)

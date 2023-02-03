@@ -88,7 +88,7 @@ export default function UserProfile() {
                     name,
                     email,
                     password,
-                    avatar: `http://localhost:5000${data}`,
+                    avatar: `https://webshop1-app.onrender.com${data}`,
                     sellerName,
                     sellerLogo,
                     sellerPayment,

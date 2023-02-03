@@ -75,11 +75,15 @@ export const detailsOrder = (orderId) => async (dispatch, getState) => {
     dispatch({ type: ORDER_DETAILS_REQUEST, payload: orderId });
     try {
         const { token } = getState();
-        const { data } = await axiosInstance.post(`/api/orders/${orderId}`, {
-            headers: {
-                Authorization: `${token}`,
+        const { data } = await axiosInstance.post(
+            `/api/orders/${orderId}`,
+            {},
+            {
+                headers: {
+                    Authorization: `${token}`,
+                },
             },
-        });
+        ); //m
         dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });
     } catch (error) {
         dispatch({
@@ -114,12 +118,13 @@ export const listOrderMine =
             const { token } = getState();
             const { data } = await axiosInstance.post(
                 `/api/orders/mine?searchValue=${searchValue}&pageNumber=${currentPage}&itemsPerPage=${itemsPerPage}`,
+                {},
                 {
                     headers: {
                         Authorization: `${token}`,
                     },
                 },
-            );
+            ); //m
             dispatch({ type: ORDER_MINE_LIST_SUCCESS, payload: data });
         } catch (error) {
             const message = error.response && error.response.data.message ? error.response.data.message : error.message;
@@ -135,12 +140,13 @@ export const listOrders =
             const { token } = getState();
             const { data } = await axiosInstance.post(
                 `/api/orders?seller=${seller}&searchValue=${searchValue}&month=${month}&year=${year}&pageNumber=${currentPage}&itemsPerPage=${itemsPerPage}`,
+                {},
                 {
                     headers: {
                         Authorization: `${token}`,
                     },
                 },
-            );
+            ); //m
             dispatch({ type: ORDER_LIST_SUCCESS, payload: data });
         } catch (error) {
             const message = error.response && error.response.data.message ? error.response.data.message : error.message;
@@ -194,12 +200,13 @@ export const listSellerSalary =
             const { token } = getState();
             const { data } = await axiosInstance.post(
                 `/api/orders/paySummary?month=${month}&year=${year}&searchValue=${searchValue}`,
+                {},
                 {
                     headers: {
                         Authorization: `${token}`,
                     },
                 },
-            );
+            ); //m
             dispatch({ type: SELLER_SALARY_LIST_SUCCESS, payload: data });
         } catch (error) {
             const message = error.response && error.response.data.message ? error.response.data.message : error.message;
@@ -221,12 +228,13 @@ export const listSellerSalary1 =
             const { token } = getState();
             const { data } = await axiosInstance.post(
                 `/api/orders/paySummary1?month=${month}&year=${year}&searchValue=${searchValue}&pageNumber=${currentPage}&itemsPerPage=${itemsPerPage}`,
+                {},
                 {
                     headers: {
                         Authorization: `${token}`,
                     },
                 },
-            );
+            ); //m
             dispatch({ type: SELLER_SALARY_LIST_SUCCESS1, payload: data });
         } catch (error) {
             const message = error.response && error.response.data.message ? error.response.data.message : error.message;
@@ -288,12 +296,13 @@ export const calculateMonthRevenue =
             const { token } = getState();
             const { data } = await axiosInstance.post(
                 `/api/orders/monthRevenue?seller=${seller}&month=${month}&year=${year}`,
+                {},
                 {
                     headers: {
                         Authorization: `${token}`,
                     },
                 },
-            );
+            ); //m
             dispatch({ type: MONTH_REVENUE_SUCCESS, payload: data });
         } catch (error) {
             const message = error.response && error.response.data.message ? error.response.data.message : error.message;
@@ -305,9 +314,13 @@ export const summaryOrder = () => async (dispatch, getState) => {
     dispatch({ type: ORDER_SUMMARY_REQUEST });
     try {
         const { token } = getState();
-        const { data } = await axiosInstance.post(`/api/orders/summary`, {
-            headers: { Authorization: `${token}` },
-        });
+        const { data } = await axiosInstance.post(
+            `/api/orders/summary`,
+            {},
+            {
+                headers: { Authorization: `${token}` },
+            },
+        ); //m
         dispatch({ type: ORDER_SUMMARY_SUCCESS, payload: data });
     } catch (error) {
         const message = error.response && error.response.data.message ? error.response.data.message : error.message;

@@ -11,7 +11,7 @@ import {
 
 export const addToCart = (productId, qty) => async (dispatch, getState) => {
     // console.log('action summary1');
-    const { data } = await axiosInstance.post(`/api/products/${productId}`);
+    const { data } = await axiosInstance.post(`/api/products/${productId}`, {}); //m
     // console.log('xcxcxc', data);
     // console.log('action summary2');
     dispatch({

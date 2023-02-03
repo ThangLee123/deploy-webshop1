@@ -48,7 +48,8 @@ export const listProducts =
             // console.log('act3');
             const { data } = await axiosInstance.post(
                 `/api/products?searchValue=${searchValue}&name=${name}&category=${category}&pageNumber=${currentPage}&itemsPerPage=${itemsPerPage}&seller=${seller}&min=${min}&max=${max}&rating=${rating}&order=${order}`,
-            );
+                {},
+            ); //m
             // console.log(data);
             // console.log('act4');
             dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
@@ -65,7 +66,7 @@ export const listProductCategories = () => async (dispatch) => {
         type: PRODUCT_CATEGORY_LIST_REQUEST,
     });
     try {
-        const { data } = await axiosInstance.post(`/api/products/categories`);
+        const { data } = await axiosInstance.post(`/api/products/categories`, {}); //m
         dispatch({ type: PRODUCT_CATEGORY_LIST_SUCCESS, payload: data });
     } catch (error) {
         dispatch({
@@ -81,7 +82,7 @@ export const detailsProduct = (productId) => async (dispatch) => {
     // console.log('acc2');
     try {
         // console.log('acc3');
-        const { data } = await axiosInstance.post(`/api/products/${productId}`);
+        const { data } = await axiosInstance.post(`/api/products/${productId}`, {}); //m
         // console.log(data);
         // console.log('acc4');
         dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });

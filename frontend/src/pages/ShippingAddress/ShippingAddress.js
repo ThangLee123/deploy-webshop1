@@ -20,7 +20,7 @@ import { SocketContext } from '~/config/socketContext';
 
 const cx = classNames.bind(styles);
 
-const MAPBOX_TOKEN = 'pk.eyJ1IjoiZmFtb3BhMjQ4MSIsImEiOiJjbGJwODE1NG0wN3g1M3ZudnNnOXR2cXU3In0.GgenYnbHX2t9Klm2ZkAyiQ';
+const MAPBOX_TOKEN = 'pk.eyJ1IjoiZmF2b2RlODUxOSIsImEiOiJjbGRvM2dyN3IwcGl4M290NmtnY21rcnllIn0.g1WW-b9CS6Uf-SuvTT4imA';
 
 function ShippingAddress() {
     const socket = useContext(SocketContext);

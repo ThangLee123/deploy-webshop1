@@ -395,7 +395,7 @@ function Order() {
     useEffect(() => {
         if (userSignin.userInfo) {
             const addPayPalScript = async () => {
-                const { data } = await axiosInstance.post('/api/config/paypal');
+                const { data } = await axiosInstance.post('/api/config/paypal', {}); //m
                 const script = document.createElement('script');
                 script.type = 'text/javascript';
                 script.src = `https://www.paypal.com/sdk/js?client-id=${data}`;

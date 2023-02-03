@@ -114,15 +114,15 @@ export default function ProductEdit() {
         let img3 = image3;
         if (isFile(imageFile1)) {
             const img1URL = await handleUploadFile(imageFile1);
-            img1 = `http://localhost:5000${img1URL}`;
+            img1 = `https://webshop1-app.onrender.com${img1URL}`;
         }
         if (isFile(imageFile2)) {
             const img2URL = await handleUploadFile(imageFile2);
-            img2 = `http://localhost:5000${img2URL}`;
+            img2 = `https://webshop1-app.onrender.com${img2URL}`;
         }
         if (isFile(imageFile3)) {
             const img3URL = await handleUploadFile(imageFile3);
-            img3 = `http://localhost:5000${img3URL}`;
+            img3 = `https://webshop1-app.onrender.com${img3URL}`;
         }
         dispatch(
             updateProduct({
