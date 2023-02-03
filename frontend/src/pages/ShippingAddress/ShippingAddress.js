@@ -20,8 +20,8 @@ import { SocketContext } from '~/config/socketContext';
 
 const cx = classNames.bind(styles);
 
-// const MAPBOX_TOKEN = 'pk.eyJ1IjoiZmF2b2RlODUxOSIsImEiOiJjbGRvM2dyN3IwcGl4M290NmtnY21rcnllIn0.g1WW-b9CS6Uf-SuvTT4imA';
-const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
+const MAPBOX_TOKEN = 'pk.eyJ1IjoiZmF2b2RlODUxOSIsImEiOiJjbGRvM2dyN3IwcGl4M290NmtnY21rcnllIn0.g1WW-b9CS6Uf-SuvTT4imA';
+// const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
 
 function ShippingAddress() {
     const socket = useContext(SocketContext);
