@@ -168,7 +168,7 @@ const SigninScreen = () => {
                         </div>
                         <div>
                             <FacebookLogin
-                                appId="573014131374273"
+                                appId="633584301478315"
                                 autoLoad={false}
                                 fields="name,email,picture"
                                 callback={responseFacebook}
