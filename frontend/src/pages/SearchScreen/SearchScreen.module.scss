@@ -1,0 +1,120 @@
+.CategoryViewstyle {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+.SideBar {
+    background: rgb(255, 255, 255);
+    width: 200px;
+    border-radius: 4px 0px 0px 4px;
+    // display: flex;
+    align-items: center;
+    // vertical-align: middle;
+    justify-content: center;
+}
+.block {
+    padding: 0px 16px 12px;
+    box-sizing: border-box;
+    line-height: 1.15;
+    text-size-adjust: 100%;
+    font-size: 14px;
+    border-top: 1px solid rgb(247, 247, 247);
+}
+
+.title {
+    max-height: 40px;
+    height: auto;
+    margin: 0px;
+    line-height: 20px;
+    display: block;
+    color: rgb(56, 56, 61);
+    font-size: 14px;
+    padding: 12px 0px;
+    font-weight: 500;
+}
+.inner {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+.Stars__Wrapper {
+    font-size: 12px;
+    display: inline-block;
+    padding: 5px 0px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.rating-list {
+    display: inline-block;
+    font-size: 12px;
+}
+.block .rating-list .item {
+    padding: 5px 0px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    line-height: 1.15;
+    text-size-adjust: 100%;
+    // font-size: 14px;
+    overflow: hidden;
+}
+.block .rating-list .item .text {
+    margin-left: 3px;
+    color: rgb(36, 36, 36);
+    font-size: 13px;
+    font-weight: 400;
+}
+.StoreAdWidgetWrapper {
+    // position: relative;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    color: rgb(36, 36, 36);
+    cursor: pointer;
+    transition: all 0.3s linear 0s;
+}
+.StoreInfoWrapper {
+    display: flex;
+    flex: 1 1 0%;
+    color: rgb(36, 36, 36);
+    padding: 16px 11px 16px 16px;
+    background-color: rgb(255, 255, 255);
+}
+.StyledRightBlock {
+    display: flex;
+}
+.FeaturedProductsWrapper_containner {
+    display: flex;
+    padding: 16px 0px;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    column-gap: 8px;
+}
+.FeaturedProductsWrapper_01 {
+    // position: relative;
+    display: flex;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    border: 1px solid rgb(235, 235, 240);
+    overflow: hidden;
+    box-sizing: content-box;
+}
+// .Logo {
+//     flex: 0 0 80px;
+//     margin-right: 12px;
+//     border: 1px solid rgb(235, 235, 240);
+//     border-radius: 4px;
+//     overflow: hidden;
+//     box-sizing: content-box;
+// }
+// .PictureV2__StyledWrapImage {
+//     padding-top: 100%;
+//     position: relative;
+//     background-color: rgb(255, 255, 255);
+// }

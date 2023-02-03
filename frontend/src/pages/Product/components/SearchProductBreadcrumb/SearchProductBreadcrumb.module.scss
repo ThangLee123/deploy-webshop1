@@ -1,0 +1,39 @@
+.product-breadcrumb {
+    margin-top: var(--header-height);
+    padding: 39px 0 23px 0;
+    display: flex;
+    // background-color: var(--breadcrumb-background);
+    background-color: #f5f5fa;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-breadcrumb__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0;
+    text-align: center;
+    text-transform: capitalize;
+    color: #292b2c;
+    flex: 1;
+}
+
+.product-breadcrumb__link {
+    flex: 1;
+}
+.product-breadcrumb__link ol {
+    justify-content: left;
+}
+
+.product-breadcrumb__link li {
+    font-size: 16px;
+}
+
+.all-products-btn {
+    transition: color 0.2s ease;
+}
+
+.all-products-btn:hover {
+    color: var(--primary-color);
+}
