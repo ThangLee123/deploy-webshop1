@@ -267,8 +267,10 @@ function SubHeader({ isHomePage }) {
         } else if (key === '4') {
             navigate('/userlist');
         } else if (key === '5') {
-            navigate('/paySellerSalary');
+            navigate('/dashboard');
         } else if (key === '6') {
+            navigate('/paySellerSalary');
+        } else if (key === '7') {
             navigate('/rollback-order-management');
         }
         // else if (key === '8-1') {
@@ -306,12 +308,16 @@ function SubHeader({ isHomePage }) {
                     key: '4',
                 },
                 {
-                    label: 'Pay Salary Seller Management',
+                    label: 'Statistics',
                     key: '5',
                 },
                 {
-                    label: 'Roll Back Order Management',
+                    label: 'Pay Salary Seller Management',
                     key: '6',
+                },
+                {
+                    label: 'Roll Back Order Management',
+                    key: '7',
                     icon: (
                         <span
                             style={{ display: rollbackNotifySubHeader === 0 && 'none' }}
