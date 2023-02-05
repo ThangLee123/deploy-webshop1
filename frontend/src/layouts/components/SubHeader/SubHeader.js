@@ -254,7 +254,7 @@ function SubHeader({ isHomePage }) {
     );
     const handleClickAdminMenuProfile = ({ key }) => {
         // message.info(`Click on item ${key}`);
-        if (key === '7') {
+        if (key === '8') {
             // console.log('sdsd', socket);
             socket.emit('removeUser', JSON.parse(localStorage.getItem('userInfo'))._id);
             dispatch(signout());
@@ -363,7 +363,7 @@ function SubHeader({ isHomePage }) {
                 },
                 {
                     label: 'Logout',
-                    key: '7',
+                    key: '8',
                 },
             ]}
         />
