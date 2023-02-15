@@ -873,6 +873,46 @@ function Order() {
                                                                 </div>
                                                             ) : (
                                                                 <div>
+                                                                    <div
+                                                                        style={{
+                                                                            backgroundColor: '#fffbe6',
+                                                                            border: '1px solid #ffe58f',
+                                                                            padding: '4px',
+                                                                        }}
+                                                                    >
+                                                                        <div style={{ fontSize: '14px' }}>
+                                                                            <span
+                                                                                style={{
+                                                                                    fontWeight: 'bold',
+                                                                                }}
+                                                                            >
+                                                                                Binance Smart Chain - BNB Exchange:
+                                                                            </span>
+                                                                            <span style={{ marginLeft: '4px' }}>
+                                                                                {(
+                                                                                    order.totalPrice *
+                                                                                    0.0040757166279379 *
+                                                                                    0.1
+                                                                                ).toFixed(4)}
+                                                                            </span>
+                                                                        </div>
+                                                                        <div style={{ fontSize: '14px' }}>
+                                                                            <span
+                                                                                style={{
+                                                                                    fontWeight: 'bold',
+                                                                                }}
+                                                                            >
+                                                                                Polygon Matic (Mumbai) - MATIC Exchange:{' '}
+                                                                            </span>
+                                                                            <span style={{ marginLeft: '4px' }}>
+                                                                                {(
+                                                                                    order.totalPrice *
+                                                                                    1.241677655513918 *
+                                                                                    0.1
+                                                                                ).toFixed(4)}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
                                                                     <div className={cx('paypal-button')}>
                                                                         <>
                                                                             {errorPay && (

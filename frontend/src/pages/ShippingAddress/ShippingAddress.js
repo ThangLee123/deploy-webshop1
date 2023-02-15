@@ -10,7 +10,7 @@ import { Modal, Radio, Space } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { savePaymentMethod, saveShippingAddress } from '~/redux/actions/cartActions';
 import { Link, useNavigate } from 'react-router-dom';
-import { VisaIcon, MasterCardIcon, MomoIcon, PaypalIcon, VnPayIcon, CODIcon } from '~/components/Icons';
+import { VisaIcon, MasterCardIcon, MomoIcon, PaypalIcon, VnPayIcon, CODIcon, BitcoinIcon } from '~/components/Icons';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { createOrder } from '~/redux/actions/orderActions';
 import { ORDER_CREATE_RESET } from '~/redux/constants/orderConstants';
@@ -445,10 +445,6 @@ function ShippingAddress() {
                                                         ${cart.totalPrice.toFixed(2)}
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <th>Convert to Crypto</th>
-                                                    <td className={cx('product-subtotal')}>0000</td>
-                                                </tr>
                                             </tfoot>
                                         </table>
                                     </div>
@@ -509,10 +505,17 @@ function ShippingAddress() {
                                                             <Radio value={'Coin'}>
                                                                 <h3>
                                                                     {' '}
-                                                                    <span>
-                                                                        <PaypalIcon />
+                                                                    <span
+                                                                        style={{
+                                                                            zoom: '50%',
+                                                                            position: 'relative',
+                                                                            top: '16px',
+                                                                            left: '2px',
+                                                                        }}
+                                                                    >
+                                                                        <BitcoinIcon />
                                                                     </span>
-                                                                    Coin
+                                                                    <span style={{ marginRight: '2px' }}>Coin</span>
                                                                 </h3>
                                                                 <p>
                                                                     Using virtual coin that we support to purchase your
