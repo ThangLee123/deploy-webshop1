@@ -11,7 +11,7 @@ import Header from '~/layouts/components/Header';
 import SubHeader from '~/layouts/components/SubHeader';
 import Footer from '~/layouts/components/Footer';
 import GoToTop from '~/components/GoToTop';
-import useAlan from "../../components/hooks/useAlan"
+import useAlan from '../../components/hooks/useAlan';
 import ChatBot from '~/components/ChatBot';
 
 const cx = classNames.bind(styles);
@@ -20,7 +20,7 @@ function Home() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    useAlan()
+    useAlan();
     return (
         <div className={cx('home')}>
             <Header />
@@ -29,7 +29,7 @@ function Home() {
             <Banner />
             <ProductList />
             <ProductOutroImage />
-            <ChatBot />
+            {/* <ChatBot /> */}
             <GoToTop />
             <Footer />
         </div>

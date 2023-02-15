@@ -12,6 +12,7 @@ import { useContext } from 'react';
 import { SocketContext } from './config/socketContext';
 import { listProductCategories } from './redux/actions/productActions';
 import MusicPlayer from './components/MusicPlayer';
+import ChatBot from './components/ChatBot';
 
 // export const socketContext = createContext();
 function App() {
@@ -84,6 +85,9 @@ function App() {
         <>
             <>
                 <MusicPlayer />
+            </>
+            <>
+                <ChatBot />
             </>
             <Router>
                 <div className="App">
