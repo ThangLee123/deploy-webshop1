@@ -421,7 +421,12 @@ export default function SearchScreen1() {
                                                 </div>
                                             </div>
                                             <div className={cx('banner-search__header-ads-button-container')}>
-                                                <div className={cx('banner-search__header-ads-button')}>Xem thêm</div>
+                                                <div
+                                                    className={cx('banner-search__header-ads-button')}
+                                                    onClick={() => navigate('/search/name/')}
+                                                >
+                                                    More
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
