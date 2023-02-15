@@ -127,5 +127,73 @@ const data = {
             description: 'high quality product',
         },
     ],
+    songs: [
+        {
+            name: 'Song',
+            singer: 'NightCore',
+            path: '/assets/music/song1.mp3',
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZYXSNeSWixiBDeSKVOHlwUfhW6g-BwfKiDg&usqp=CAU',
+        },
+        {
+            name: 'Song1',
+            singer: 'NightCore1',
+            path: './assets/music/song2.mp3',
+            img: './assets/img/92215197_p0_master1200.jpg',
+        },
+        {
+            name: 'Song2',
+            singer: 'NightCore2',
+            path: './assets/music/song3.mp3',
+            img: './assets/img/94755985_p0_master1200.jpg',
+        },
+        {
+            name: 'Song3',
+            singer: 'NightCore3',
+            path: './assets/music/song4.mp3',
+            img: './assets/img/95664953_p0_master1200.jpg',
+        },
+        {
+            name: 'Song4',
+            singer: 'NightCore4',
+            path: './assets/music/song5.mp3',
+            img: './assets/img/95680161_p0_master1200.jpg',
+        },
+        {
+            name: 'Song5',
+            singer: 'NightCore5',
+            path: './assets/music/song6.mp3',
+            img: './assets/img/95819670_p0_master1200.jpg',
+        },
+        {
+            name: 'Song6',
+            singer: 'NightCore6',
+            path: './assets/music/song7.mp3',
+            img: './assets/img/96114072_p0_master1200.jpg',
+        },
+        {
+            name: 'Song7',
+            singer: 'NightCore7',
+            path: './assets/music/song8.mp3',
+            img: './assets/img/89455468_p0_master1200.jpg',
+        },
+        {
+            name: 'Song8',
+            singer: 'NightCore8',
+            path: './assets/music/song9.mp3',
+            img: './assets/img/94632192_p0_master1200.jpg',
+        },
+        {
+            name: 'Song9',
+            singer: 'NightCore9',
+            path: './assets/music/song10.mp3',
+            img: './assets/img/93231708_p0_master1200.jpg',
+        },
+        {
+            name: 'Song10',
+            singer: 'NightCore10',
+            path: './assets/music/song11.mp3',
+            img: './assets/img/88956271_p0_master1200.jpg',
+        },
+    ],
 };
 export default data;

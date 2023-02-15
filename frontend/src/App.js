@@ -11,6 +11,7 @@ import { fetchUser } from './redux/actions/userActions';
 import { useContext } from 'react';
 import { SocketContext } from './config/socketContext';
 import { listProductCategories } from './redux/actions/productActions';
+import MusicPlayer from './components/MusicPlayer';
 
 // export const socketContext = createContext();
 function App() {
@@ -80,61 +81,66 @@ function App() {
         dispatch(listProductCategories());
     }, [dispatch]);
     return (
-        <Router>
-            <div className="App">
-                <Routes>
-                    {publicRoutes.map((route, index) => {
-                        const Page = route.component;
+        <>
+            <>
+                <MusicPlayer />
+            </>
+            <Router>
+                <div className="App">
+                    <Routes>
+                        {publicRoutes.map((route, index) => {
+                            const Page = route.component;
 
-                        let Layout = DefaultLayout;
+                            let Layout = DefaultLayout;
 
-                        if (route.layout) {
-                            Layout = route.layout;
-                        } else if (route.layout === null) {
-                            Layout = Fragment;
-                        }
+                            if (route.layout) {
+                                Layout = route.layout;
+                            } else if (route.layout === null) {
+                                Layout = Fragment;
+                            }
 
-                        return (
-                            <Route
-                                key={index}
-                                path={route.path}
-                                element={
-                                    <Layout>
-                                        <Page />
-                                    </Layout>
-                                }
-                            />
-                        );
-                    })}
-                    {privateRoutes.map((route, index) => {
-                        const Page = route.component;
-
-                        let Layout = DefaultLayout;
-
-                        if (route.layout) {
-                            Layout = route.layout;
-                        } else if (route.layout === null) {
-                            Layout = Fragment;
-                        }
-
-                        let ProtectRoute = route.isPrivate || route.isAdminPrivate || route.isSellerPrivate;
-                        return (
-                            <Route
-                                key={index}
-                                path={route.path}
-                                element={
-                                    <ProtectRoute>
+                            return (
+                                <Route
+                                    key={index}
+                                    path={route.path}
+                                    element={
                                         <Layout>
                                             <Page />
                                         </Layout>
-                                    </ProtectRoute>
-                                }
-                            />
-                        );
-                    })}
-                </Routes>
-            </div>
-        </Router>
+                                    }
+                                />
+                            );
+                        })}
+                        {privateRoutes.map((route, index) => {
+                            const Page = route.component;
+
+                            let Layout = DefaultLayout;
+
+                            if (route.layout) {
+                                Layout = route.layout;
+                            } else if (route.layout === null) {
+                                Layout = Fragment;
+                            }
+
+                            let ProtectRoute = route.isPrivate || route.isAdminPrivate || route.isSellerPrivate;
+                            return (
+                                <Route
+                                    key={index}
+                                    path={route.path}
+                                    element={
+                                        <ProtectRoute>
+                                            <Layout>
+                                                <Page />
+                                            </Layout>
+                                        </ProtectRoute>
+                                    }
+                                />
+                            );
+                        })}
+                    </Routes>
+                </div>
+            </Router>
+        </>
     );
 }
 

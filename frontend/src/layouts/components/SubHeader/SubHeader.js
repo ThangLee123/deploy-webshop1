@@ -437,79 +437,108 @@ function SubHeader({ isHomePage }) {
         />
     );
     return (
-        <div className={cx('sub-header')} ref={SubHeaderElement}>
-            <div className="grid wide" style={{ height: '100%' }}>
-                <div className={cx('sub-header__container')}>
-                    <div className={cx('sub-header__category')}>
-                        {/* {console.log('bind subheader')} */}
-                        <Link to="/">
-                            <Button type="danger" size="middle">
-                                <HomeOutlined />
-                            </Button>
-                        </Link>
-                        <div className={cx('sub-header__category-btn')}>
-                            <Dropdown overlay={menu}>
-                                <Button type="danger">
-                                    <Space>
-                                        <MenuOutlined />
-                                        Categories
-                                    </Space>
+        <div style={{ position: 'relative', zIndex: 99999999 }}>
+            <div className={cx('sub-header')} ref={SubHeaderElement}>
+                <div className="grid wide" style={{ height: '100%' }}>
+                    <div className={cx('sub-header__container')}>
+                        <div className={cx('sub-header__category')}>
+                            {/* {console.log('bind subheader')} */}
+                            <Link to="/">
+                                <Button type="danger" size="middle">
+                                    <HomeOutlined />
                                 </Button>
-                            </Dropdown>
-                        </div>
-                        <div className={cx('sub-header__category-btn-mobile')}>
-                            <Dropdown overlay={menu}>
-                                <Button type="danger">
-                                    <Space>
-                                        <MenuOutlined />
-                                    </Space>
-                                </Button>
-                            </Dropdown>
-                        </div>
-                    </div>
-                    <SearchBox />
-                    <div className={cx('sub-header__actions')}>
-                        {localStorage.getItem('userInfo') &&
-                        (JSON.parse(localStorage.getItem('userInfo')).isSeller === true ||
-                            JSON.parse(localStorage.getItem('userInfo')).isAdmin === true) ? (
-                            <div></div>
-                        ) : (
-                            <Link
-                                to="/cart"
-                                className={cx('sub-header__actions-cart')}
-                                onClick={() => {
-                                    dispatch({ type: CART_RESET_ITEM });
-                                }}
-                            >
-                                <ShoppingCartOutlined />
-                                {cartItems.length > 0 && (
-                                    <span className={cx('sub-header__actions-cart-notify')}> {cartItems.length}</span>
-                                )}
                             </Link>
-                        )}
+                            <div className={cx('sub-header__category-btn')}>
+                                <Dropdown overlay={menu}>
+                                    <Button type="danger">
+                                        <Space>
+                                            <MenuOutlined />
+                                            Categories
+                                        </Space>
+                                    </Button>
+                                </Dropdown>
+                            </div>
+                            <div className={cx('sub-header__category-btn-mobile')}>
+                                <Dropdown overlay={menu}>
+                                    <Button type="danger">
+                                        <Space>
+                                            <MenuOutlined />
+                                        </Space>
+                                    </Button>
+                                </Dropdown>
+                            </div>
+                        </div>
+                        <SearchBox />
+                        <div className={cx('sub-header__actions')}>
+                            {localStorage.getItem('userInfo') &&
+                            (JSON.parse(localStorage.getItem('userInfo')).isSeller === true ||
+                                JSON.parse(localStorage.getItem('userInfo')).isAdmin === true) ? (
+                                <div></div>
+                            ) : (
+                                <Link
+                                    to="/cart"
+                                    className={cx('sub-header__actions-cart')}
+                                    onClick={() => {
+                                        dispatch({ type: CART_RESET_ITEM });
+                                    }}
+                                >
+                                    <ShoppingCartOutlined />
+                                    {cartItems.length > 0 && (
+                                        <span className={cx('sub-header__actions-cart-notify')}>
+                                            {' '}
+                                            {cartItems.length}
+                                        </span>
+                                    )}
+                                </Link>
+                            )}
 
-                        {userInfo ? (
-                            userInfo.isAdmin === false ? (
-                                userInfo.isSeller === false ? (
-                                    <div className={cx('sub-header__info-container')}>
-                                        <Dropdown overlay={menuProfile} placement="bottomRight" arrow>
-                                            <a
-                                                href="/"
-                                                onClick={(e) => e.preventDefault()}
-                                                className={cx('sub-header__info-user-name')}
-                                            >
-                                                <img
-                                                    src={userInfo.avatar}
-                                                    alt=""
-                                                    className={cx('sub-header__info-user-img')}
-                                                />
-                                                {userInfo.name}
-                                            </a>
-                                        </Dropdown>
-                                    </div>
+                            {userInfo ? (
+                                userInfo.isAdmin === false ? (
+                                    userInfo.isSeller === false ? (
+                                        <div className={cx('sub-header__info-container')}>
+                                            <Dropdown overlay={menuProfile} placement="bottomRight" arrow>
+                                                <a
+                                                    href="/"
+                                                    onClick={(e) => e.preventDefault()}
+                                                    className={cx('sub-header__info-user-name')}
+                                                >
+                                                    <img
+                                                        src={userInfo.avatar}
+                                                        alt=""
+                                                        className={cx('sub-header__info-user-img')}
+                                                    />
+                                                    {userInfo.name}
+                                                </a>
+                                            </Dropdown>
+                                        </div>
+                                    ) : (
+                                        <div className={cx('sub-header__info-container')}>
+                                            <Dropdown overlay={menuSellerProfile} placement="bottomRight" arrow>
+                                                <a
+                                                    href="/"
+                                                    onClick={(e) => e.preventDefault()}
+                                                    className={cx('sub-header__info-user-name')}
+                                                >
+                                                    <img
+                                                        src={userInfo.avatar}
+                                                        alt=""
+                                                        className={cx('sub-header__info-user-img')}
+                                                    />
+                                                    <span
+                                                        style={{
+                                                            display: orderNotifySubHeader === 0 && 'none',
+                                                        }}
+                                                        // className={cx(`${rollbackNotifySubHeader > 0 && 'counter1'}`)}
+                                                        className={cx(`counter1`)}
+                                                    ></span>
+                                                    {userInfo.name}
+                                                </a>
+                                            </Dropdown>
+                                        </div>
+                                    )
                                 ) : (
                                     <div className={cx('sub-header__info-container')}>
-                                        <Dropdown overlay={menuSellerProfile} placement="bottomRight" arrow>
+                                        <Dropdown overlay={menuAdminProfile} placement="bottomRight" arrow>
                                             <a
                                                 href="/"
                                                 onClick={(e) => e.preventDefault()}
@@ -522,7 +551,10 @@ function SubHeader({ isHomePage }) {
                                                 />
                                                 <span
                                                     style={{
-                                                        display: orderNotifySubHeader === 0 && 'none',
+                                                        display:
+                                                            rollbackNotifySubHeader === 0 &&
+                                                            orderNotifySubHeader === 0 &&
+                                                            'none',
                                                     }}
                                                     // className={cx(`${rollbackNotifySubHeader > 0 && 'counter1'}`)}
                                                     className={cx(`counter1`)}
@@ -533,38 +565,11 @@ function SubHeader({ isHomePage }) {
                                     </div>
                                 )
                             ) : (
-                                <div className={cx('sub-header__info-container')}>
-                                    <Dropdown overlay={menuAdminProfile} placement="bottomRight" arrow>
-                                        <a
-                                            href="/"
-                                            onClick={(e) => e.preventDefault()}
-                                            className={cx('sub-header__info-user-name')}
-                                        >
-                                            <img
-                                                src={userInfo.avatar}
-                                                alt=""
-                                                className={cx('sub-header__info-user-img')}
-                                            />
-                                            <span
-                                                style={{
-                                                    display:
-                                                        rollbackNotifySubHeader === 0 &&
-                                                        orderNotifySubHeader === 0 &&
-                                                        'none',
-                                                }}
-                                                // className={cx(`${rollbackNotifySubHeader > 0 && 'counter1'}`)}
-                                                className={cx(`counter1`)}
-                                            ></span>
-                                            {userInfo.name}
-                                        </a>
-                                    </Dropdown>
-                                </div>
-                            )
-                        ) : (
-                            <Link to="/signin" className={cx('sub-header__actions-signin')}>
-                                Sign In
-                            </Link>
-                        )}
+                                <Link to="/signin" className={cx('sub-header__actions-signin')}>
+                                    Sign In
+                                </Link>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
