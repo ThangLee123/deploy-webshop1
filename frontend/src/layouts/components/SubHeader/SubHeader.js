@@ -437,7 +437,7 @@ function SubHeader({ isHomePage }) {
         />
     );
     return (
-        <div style={{ position: 'relative', zIndex: 99999999 }}>
+        <div style={{ position: 'relative', zIndex: 99 }}>
             <div className={cx('sub-header')} ref={SubHeaderElement}>
                 <div className="grid wide" style={{ height: '100%' }}>
                     <div className={cx('sub-header__container')}>
