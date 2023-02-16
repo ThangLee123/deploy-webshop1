@@ -112,8 +112,8 @@ const updateRollbackOrderByOrderId = expressAsyncHandler(async (req, res) => {
       const product = await Product.findById(sellerPay.productId);
       if (product) {
         product.countInStock = product.countInStock + sellerPay.userBuyQuantity;
+        const updateProduct = await product.save();
       }
-      const updateProduct = await product.save();
     }
     const deleteSellerPay = await SellerPay.deleteMany({
       orderId: req.body.orderId,
